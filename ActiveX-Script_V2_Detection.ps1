@@ -13,9 +13,11 @@ $remediationScript = Join-Path $scriptFolder "ActiveX-Script_V2_Remediation.ps1"
 $taskDetect = "IE_Zone_Detection"
 $taskRemed = "IE_Zone_Remediation"
 
-
 $scriptURL_Detection = "https://raw.githubusercontent.com/N0rbelio/ActiveX-Script/main/ActiveX-Script_V2_Detection.ps1"
 $scriptURL_Remediation = "https://raw.githubusercontent.com/N0rbelio/ActiveX-Script/main/ActiveX-Script_V2_Remediation.ps1"
+
+#$scriptURL_Detection = "https://github.com/N0rbelio/ActiveX-Script.git\ActiveX-Script_V2_Detection.ps1"
+#$scriptURL_Remediation = "https://github.com/N0rbelio/ActiveX-Script.git\ActiveX-Script_V2_Remediation.ps1"
 
 # Cria pasta se não existir
 if (-not (Test-Path $scriptPath)) {
@@ -303,6 +305,3 @@ try {
 } catch {
     Write-Output "Script failed with error: $($_.Exception.Message)"
 }
-
-
-
