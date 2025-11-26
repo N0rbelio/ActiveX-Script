@@ -251,6 +251,13 @@ function Write-ScriptLocally {
         Write-Log "Failed to create scheduled task: $($_.Exception.Message)"
     }
 
+    try {
+    Start-ScheduledTask -TaskName $TaskName
+    Write-Log "Task '$TaskName' started immediately."
+    }
+    catch {
+        Write-Log "Failed to start task immediately: $($_.Exception.Message)"
+    }
     return $scriptPath
 }
 
